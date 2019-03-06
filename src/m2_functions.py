@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Jacob Murray.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# Done: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -25,10 +25,13 @@ def main():
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
     """
+    print(hyp(3, 4))
+    p2('red', 10)
+    p2('blue', 20)
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# Done: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -36,14 +39,15 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# Done: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
-
+def hyp(a, b):
+    return (a ** 2 + b ** 2)**(1/2)
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# Done: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -65,14 +69,27 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# Done: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
+def p2(color, thickness):
+    window = rg.TurtleWindow()
+    jake = rg.SimpleTurtle()
+    jake.pen = rg.Pen(color, 5)
+    jake1 = rg.SimpleTurtle()
+    jake1.pen = rg.Pen('green', thickness)
+    jake1.forward(100)
+    jake.backward(100)
+    window.close_on_mouse_click()
+    # This function cannot be called twice and I do not know why.
+    # I keep getting turtle.Terminator after I close the first window
+
+
 ###############################################################################
-# TODO: 5.
+# Done: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
